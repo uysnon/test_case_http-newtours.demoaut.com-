@@ -97,8 +97,12 @@ public class TestCase extends BaseTest {
                 "7/7/2019 @ 7:10 w/ Blue Skies Airlines 361 \n" +
                 "Business\n" +
                 "$271 each";
-
-        if (!departing.equals(departingExpected)) {
+        String startCityTo =  "Sydney";
+        String finalCityTo =  "Acapulco";
+        String airLines = "Blue Skies Airlines";
+        String priceTo = "271";
+        if (!(departing.contains(startCityTo) && departing.contains(finalCityTo)
+                && departing.contains(airLines) && departing.contains(priceTo))) {
             MatcherAssert.assertThat("Билет в место назначения не совпал с ожидаемым.\n" +
                     "Ожидается: " + departingExpected +
                     "\nВстречено: " + departing, false);
@@ -109,7 +113,11 @@ public class TestCase extends BaseTest {
                 "4/27/2019 @ 12:23 w/ Blue Skies Airlines 630 \n" +
                 "Business\n" +
                 "$270 each";
-        if (!returning.equals(returningExpected)) {
+        String startCityOut =  "Acapulco";
+        String finalCityOut =  "Sydney";
+        String priceOut = "270";
+        if (!(returning.contains(startCityOut) && returning.contains(finalCityOut)
+                && returning.contains(airLines) && returning.contains(priceOut))) {
             MatcherAssert.assertThat("Обратный билет не совпал с ожидаемым.\n" +
                     "Ожидается: " + returningExpected +
                     "\nВстречено: " + returning, false);

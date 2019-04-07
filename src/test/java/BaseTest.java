@@ -17,6 +17,6 @@ public class BaseTest {
 
     @After
     public void tearDown() {
-//        chromeWebDriver.quit();
+        chromeWebDriver.quit();
     }
 }
